@@ -2,7 +2,7 @@
 
 pushd /home/klipper/klipper
 echo "flashing rpi-mcu"
-cp -f /home/klipper/only-slightly-bent/config/boards/rpi/firmware.config /home/klipper/klipper/.config
+cp -f /home/klipper/only-slightly-bent/config/printers/boards/rpi/firmware.config /home/klipper/klipper/.config
 make olddefconfig
 make clean
 # Reset ownership
