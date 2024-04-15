@@ -1,7 +1,8 @@
 #!/bin/bash
 
 pushd /home/klipper/klipper
-service klipper stop
+systemctl stop klipper.service
+systemctl stop klipper-mcu.service
 make flash
 # Reset ownership
 chown klipper:klipper -R /home/klipper/klipper
@@ -9,5 +10,6 @@ chown klipper:klipper -R /home/klipper/klipper
 cp ./scripts/klipper-mcu.service /etc/systemd/system/
 systemctl enable klipper-mcu.service
 
-service klipper start
+systemctl start klipper-mcu.service
+systemctl start klipper.service
 popd
